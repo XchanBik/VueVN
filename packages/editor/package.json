@@ -2,7 +2,7 @@
   "name": "@vuevn/editor",
   "version": "0.1.0",
   "private": true,
-  "main": "dist-electron/main.js",
+  "main": "dist/electron/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build && tsc --project tsconfig.node.json",

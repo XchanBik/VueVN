@@ -1,12 +1,12 @@
 import { app, BrowserWindow } from 'electron'
-import path from 'path'
+import * as path from 'path'
 import Store from 'electron-store'
-import { setupBuildHandlers } from './buildService'
 
 // Initialize store for project data
 const store = new Store()
 
 function createWindow() {
+  console.log('__dirname:', __dirname);
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
@@ -15,19 +15,23 @@ function createWindow() {
       contextIsolation: false
     }
   })
-
   // In development, load from Vite dev server
   if (process.env.NODE_ENV === 'development') {
     mainWindow.loadURL('http://localhost:5173')
     mainWindow.webContents.openDevTools()
   } else {
     // In production, load the built files
-    mainWindow.loadFile(path.join(__dirname, '../dist/index.html'))
+    mainWindow.loadFile(path.join(__dirname, '/../../dist-app/index.html'))
   }
+
+  // 👇 Hides the menu bar completely
+  mainWindow.setMenuBarVisibility(false);
+
+  // 👇 Optionally disables Alt key menu toggle (Windows/Linux only)
+  mainWindow.setAutoHideMenuBar(true);
 }
 
 app.whenReady().then(() => {
-  setupBuildHandlers()
   createWindow()
 
   app.on('activate', () => {

@@ -14,12 +14,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import BuildButton from './components/BuildButton.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    BuildButton
   }
 })
 </script>
@@ -52,5 +50,11 @@ export default defineComponent({
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   height: 100%;
   padding: 1rem;
+}
+
+body, #app {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 </style> 

@@ -4,6 +4,7 @@ import { resolve } from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './', // <-- Add this line!
   plugins: [vue()],
   resolve: {
     alias: {
@@ -11,7 +12,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: 'dist-app',
     emptyOutDir: true,
   },
 }) 
