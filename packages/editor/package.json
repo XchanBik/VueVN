@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "electron:dev": "electron .",
     "electron:build": "electron-builder",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc --noEmit",
+    "dev:electron": "concurrently \"npm run dev\" \"npm run electron:dev\""
   },
   "dependencies": {
     "vue": "^3.4.0",
@@ -25,7 +26,8 @@
     "typescript": "^5.3.3",
     "vite": "^5.0.0",
     "vite-plugin-electron": "^0.15.0",
-    "vue-tsc": "^1.8.0"
+    "vue-tsc": "^1.8.0",
+    "concurrently": "^8.2.2"
   },
   "build": {
     "appId": "com.vuevn.editor",
