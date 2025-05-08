@@ -1,2 +1,2 @@
 # VueVN
-A simple VN engine i plan to do in free time.
+A VN engine i plan to do in free time.
