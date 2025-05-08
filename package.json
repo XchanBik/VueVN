@@ -6,7 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:editor": "cd packages/editor && npm run dev:electron",
+    "dev:electron": "cd packages/editor && npm run dev:electron",
+    "dev:editor": "cd packages/editor && npm run dev:editor",
     "build:editor": "cd packages/editor && npm run build",
     "build:engine": "cd packages/engine && npm run build",
     "build:runtime": "cd packages/runtime && npm run build"

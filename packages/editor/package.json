@@ -7,10 +7,11 @@
     "dev": "vite",
     "build": "vite build && tsc --project tsconfig.node.json",
     "preview": "vite preview",
-    "electron:dev": "electron . --Dev",
+    "electron:cmd": "electron . --Dev",
+    "dev:electron": "npm run electron:cmd",
     "electron:build": "electron-builder",
     "type-check": "vue-tsc --noEmit",
-    "dev:electron": "concurrently \"npm run dev\" \"npm run electron:dev\""
+    "dev:editor": "npm run dev"
   },
   "dependencies": {
     "vue": "^3.4.0",
