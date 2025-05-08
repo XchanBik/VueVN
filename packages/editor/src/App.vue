@@ -41,7 +41,7 @@ export default defineComponent({
 .main {
   flex: 1;
   padding: 1rem;
-  background: #f5f5f5;
+  background: #f5f5A5;
 }
 
 .workspace {
@@ -49,7 +49,6 @@ export default defineComponent({
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   height: 100%;
-  padding: 1rem;
 }
 
 body, #app {

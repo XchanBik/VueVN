@@ -6,7 +6,12 @@ import Store from 'electron-store'
 const store = new Store()
 
 function createWindow() {
+  console.log('Process arguments:', process.argv);
   console.log('__dirname:', __dirname);
+
+  // Detect dev mode from process arguments
+  const isDev = process.argv.includes('--Dev');
+
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
@@ -16,7 +21,7 @@ function createWindow() {
     }
   })
   // In development, load from Vite dev server
-  if (process.env.NODE_ENV === 'development') {
+  if (isDev) {
     mainWindow.loadURL('http://localhost:5173')
     mainWindow.webContents.openDevTools()
   } else {
