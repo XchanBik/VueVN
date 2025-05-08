@@ -34,8 +34,10 @@ npm install
 ```
 
 2. Start the editor in development mode:
+Open 2 console.
 ```bash
 npm run dev:editor
+npm run dev:electron
 ```
 
 3. Build the engine:

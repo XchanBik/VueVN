@@ -41,7 +41,7 @@ export default defineComponent({
 .main {
   flex: 1;
   padding: 1rem;
-  background: #A5D5F5;
+  background: #f00a97;
 }
 
 .workspace {
