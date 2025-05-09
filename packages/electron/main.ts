@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron'
 import * as path from 'path'
+import { registerAllIpc } from './ipc'
 import Store from 'electron-store'
 
 // Initialize store for project data
@@ -11,13 +12,16 @@ function createWindow() {
 
   // Detect dev mode from process arguments
   const isDev = process.argv.includes('--Dev');
+  
+  console.log('Preload path:', path.join(__dirname, 'preload.js'))
 
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 800,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
+      nodeIntegration: false,
+      contextIsolation: true,
+      preload: path.join(__dirname, 'preload.js') // path to your built preload script
     }
   })
   // In development, load from Vite dev server
@@ -37,6 +41,7 @@ function createWindow() {
 }
 
 app.whenReady().then(() => {
+  registerAllIpc()
   createWindow()
 
   app.on('activate', () => {
